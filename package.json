@@ -1,6 +1,6 @@
 {
   "name": "gemini-cli-readwise-reader",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A Readwise Reader extension for Gemini CLI.",
   "type": "module",
   "scripts": {
