@@ -1,7 +1,7 @@
-# Readwise Reader MCP Server
+# Readwise Reader Gemini CLI Extension
 
-This is a generic Model Context Protocol (MCP) server for [Readwise Reader](https://readwise.io/read).
-It allows LLMs (like Gemini CLI) to list and add documents to your Reader account.
+This is an extension for the [Gemini CLI](https://github.com/google-gemini/gemini-cli) that integrates with [Readwise Reader](https://readwise.io/read).
+It allows Gemini to list and add documents to your Reader account.
 
 ## Features
 
