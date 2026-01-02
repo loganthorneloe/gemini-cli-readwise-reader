@@ -34,16 +34,21 @@ export READWISE_API_KEY="your_token_here"
 
 ## Usage
 
-### Running with Gemini CLI (or other MCP clients)
+### Installing with Gemini CLI
 
-To use this with Gemini CLI, you can configure it as an extension tool.
-
-**Command:**
+**Local Installation:**
+Navigate to the project directory and run:
 ```bash
-node /path/to/gemini-cli-readwise-reader/dist/reader.js
+gemini install extension .
 ```
 
-Ensure the `READWISE_API_KEY` is set in the environment where you run the client.
+**Remote Installation:**
+Install directly from GitHub:
+```bash
+gemini install extension https://github.com/loganthorneloe/gemini-cli-readwise-reader
+```
+
+Ensure the `READWISE_API_KEY` is set in your environment (e.g. `.zshrc`, `.bashrc`) so the extension can access it.
 
 ### Tools
 
