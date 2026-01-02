@@ -1,26 +1,39 @@
 # Contributing
 
-Thanks for your interest in contributing! We appreciate your help.
+Thanks for your interest in improving the Readwise Reader extension! We want to make contributing as easy as possible.
 
 ## How to Contribute
 
-### Bugs & Features
-- **Found a bug?** Open an issue with clear steps to reproduce it.
-- **Have an idea?** Open an issue to discuss it before you start coding.
+### Reporting Bugs
+If you find a bug, please [open an issue](https://github.com/loganthorneloe/gemini-cli-readwise-reader/issues). To help us fix it quickly, please include:
+- A clear, descriptive title.
+- Steps to reproduce the issue.
+- What you expected to happen vs. what actually happened.
+- Any relevant logs or screenshots.
 
-### Development Workflow
-1.  **Fork & Clone**: Fork the repo and clone it locally.
-2.  **Install**: Run `npm install`.
-3.  **Branch**: Create a branch for your changes (e.g., `feat/new-filter`).
-4.  **Code**: 
-    - Use **TypeScript** (Strict Mode).
-    - Avoid `any` types.
-5.  **Build**: Run `npm run build` to verify everything compiles.
-6.  **Pull Request**: Push to your fork and open a PR. Keep your description clear.
+### Suggesting Features
+We love new ideas! Before writing code, please open an issue to describe:
+- The problem this feature solves.
+- How you imagine it working.
+- Any alternative solutions you've considered.
+
+### Pull Requests
+1.  **Fork** the repository and create your branch from `main`.
+2.  **Install dependencies** with `npm install`.
+3.  **Implement your changes**. Ensure you follow the project's TypeScript strict mode.
+4.  **Verify your build** by running `npm run build`.
+5.  **Commit your changes** using descriptive messages. We recommend [Conventional Commits](https://www.conventionalcommits.org/) (e.g., `feat: ...` or `fix: ...`).
+6.  **Submit a PR** with a clear description of your changes and a link to any related issues.
+
+## Style Guidelines
+
+### TypeScript
+- This project uses **Strict Mode**. Avoid using `any` unless absolutely necessary.
+- Use `async/await` for asynchronous logic.
+- Ensure all new tools added to `reader.ts` have proper Zod schemas and TypeScript interfaces.
 
 ### Commits
-- Use the present tense ("Add feature" not "Added feature").
-- Keep it simple and descriptive.
-- We like [Conventional Commits](https://www.conventionalcommits.org/) (e.g., `fix: handle api errors`), but it's not strictly required.
+- Use the present tense ("Add feature", not "Added feature").
+- Keep the first line short (under 72 characters).
 
-That's it! Happy coding.
+Thanks again for contributing!
