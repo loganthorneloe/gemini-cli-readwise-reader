@@ -2,6 +2,7 @@
   "name": "gemini-cli-readwise-reader",
   "version": "1.0.2",
   "description": "A Readwise Reader extension for Gemini CLI.",
+  "license": "MIT",
   "type": "module",
   "scripts": {
     "build": "tsc",
