@@ -15,6 +15,21 @@ const headers = {
   'Content-Type': 'application/json',
 };
 
+interface ReadwiseDocument {
+  id: string;
+  title: string;
+  author: string;
+  url: string;
+  created_at: string;
+  summary?: string;
+  [key: string]: unknown;
+}
+
+interface ReadwiseListResponse {
+  results: ReadwiseDocument[];
+  [key: string]: unknown;
+}
+
 const server = new McpServer({
   name: 'readwise-reader',
   version: '1.0.0',
@@ -31,24 +46,24 @@ server.tool(
   },
   async ({ location, page_size, filter_title, filter_author, filter_created_after }) => {
     try {
-        const params: any = {
+        const params: Record<string, unknown> = {
             location,
             page_size: (filter_title || filter_author) ? 100 : page_size, // Fetch more if filtering
         };
         if (filter_created_after) params.saved_after = filter_created_after;
 
-        const response = await axios.get(`${API_BASE_URL}/list/`, { headers, params });
+        const response = await axios.get<ReadwiseListResponse>(`${API_BASE_URL}/list/`, { headers, params });
         let results = response.data.results || [];
 
         // Client-side filtering
         if (filter_title) {
-            results = results.filter((doc: any) => doc.title && doc.title.toLowerCase().includes(filter_title.toLowerCase()));
+            results = results.filter((doc) => doc.title && doc.title.toLowerCase().includes(filter_title.toLowerCase()));
         }
         if (filter_author) {
-            results = results.filter((doc: any) => doc.author && doc.author.toLowerCase().includes(filter_author.toLowerCase()));
+            results = results.filter((doc) => doc.author && doc.author.toLowerCase().includes(filter_author.toLowerCase()));
         }
 
-        const formatted = results.slice(0, page_size).map((doc: any) => ({
+        const formatted = results.slice(0, page_size).map((doc) => ({
             id: doc.id,
             title: doc.title,
             author: doc.author,
@@ -98,7 +113,7 @@ server.tool(
     },
     async ({ id }) => {
         try {
-            const response = await axios.get(`${API_BASE_URL}/list/`, { 
+            const response = await axios.get<ReadwiseListResponse>(`${API_BASE_URL}/list/`, { 
                 headers, 
                 params: { id, withHtmlContent: 'true' } 
             });
