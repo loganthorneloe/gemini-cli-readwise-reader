@@ -1,0 +1,16 @@
+{
+  "name": "readwise-reader",
+  "description": "Readwise Reader extension for Gemini CLI",
+  "version": "1.0.0",
+  "contextFileName": "GEMINI.md",
+  "mcpServers": {
+    "readwise": {
+      "command": "node",
+      "args": ["${extensionPath}${/}dist${/}reader.js"],
+      "cwd": "${extensionPath}",
+      "env": {
+        "READWISE_API_KEY": "${READWISE_API_KEY}"
+      }
+    }
+  }
+}

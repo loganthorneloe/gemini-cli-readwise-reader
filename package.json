@@ -1,0 +1,19 @@
+{
+  "name": "gemini-cli-readwise-reader",
+  "version": "1.0.0",
+  "description": "A Readwise Reader extension for Gemini CLI.",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/reader.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.1",
+    "zod": "^3.22.4",
+    "axios": "^1.6.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.2.2",
+    "@types/node": "^20.8.0"
+  }
+}
